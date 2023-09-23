@@ -4,15 +4,15 @@ use adw;
 select 
     sales.SalesOrderID,
     sales.OrderDate,
-    sales.CustomerID,
+    -- sales.CustomerID,
     sales.SalesPersonID,
     sales.TerritoryID,
-    concat(person.FirstName, ' ', person.LastName) as CustomerName,
+    -- concat(person.FirstName, ' ', person.LastName) as CustomerName,
     concat(employee.FirstName, ' ', employee.LastName) as SalesPersonName,
     territory.name as TerritoryName
 from Sales_SalesOrderHeader as sales
-    join Sales_Customer as client
-        on sales.CustomerID = client.CustomerID
+    -- join Sales_Customer as client
+        -- on sales.CustomerID = client.CustomerID
     left outer join Person_Person as person
         on client.PersonID = person.BusinessEntityID
     join Sales_SalesPerson as salesperson 
