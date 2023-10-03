@@ -28,6 +28,8 @@ from Sales_Customer as Customer
 limit 3;
 
 
+
+
 -- consultas de calidad
 -- SELECT COUNT(CASE WHEN PersonID IS NULL THEN 1 END) AS cantidad_de_null
 -- SELECT COUNT(PersonID) AS cantidad

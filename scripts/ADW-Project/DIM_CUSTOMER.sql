@@ -18,3 +18,4 @@ from Sales_Customer as Customer
     join Person_CountryRegion as Region
         on Prov.CountryRegionCode = Region.CountryRegionCode
 limit 3;
+ 

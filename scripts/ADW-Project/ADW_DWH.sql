@@ -146,3 +146,6 @@ create table if not exists fact_ventas(
     index cliente_key (cliente_key),
     foreign key (cliente_key) references dim_cliente(cliente_key)
 );
+
+
+
