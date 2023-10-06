@@ -1,5 +1,5 @@
 select
-    Customer.PersonID,
+    Customer.CustomerID,
     CONCAT(Person.FirstName, ' ',Person.LastName) AS Nombre_Apellido,
     Address.City,
     Prov.Name as Province_Name,

@@ -19,7 +19,7 @@ create table if not exists dim_time(
 -- Dimension Vendedor
 create table if not exists dim_vendedor(
     salesperson_key       int not null AUTO_INCREMENT,
-    salesperson_id        tinyint(8)  not null, 
+    salesperson_id        int not null, 
     salesperson_name      varchar(50) not null,
     city                  varchar(30) not null,
     country               varchar(30) not null,
@@ -47,11 +47,11 @@ create table if not exists dim_tienda(
 -- Dimension Producto
 create table if not exists dim_producto(
     product_key   int not null AUTO_INCREMENT,
-    product_id    tinyint(8) not null, 
+    product_id    int not null, 
     product       varchar(100) not null,
     localizacion  varchar(100) not null,
     costrate      decimal(10,4) not null,
-    class         char(2) not null, 
+    class         char(2), 
     category      varchar(100) not null,
     subcategory   varchar(100) not null,
     last_update timestamp not null default CURRENT_TIMESTAMP,
@@ -63,7 +63,7 @@ create table if not exists dim_producto(
 -- Dimension Proveedor
 create table if not exists dim_proveedor(
     proveedor_key   int not null AUTO_INCREMENT,
-    proveedor_id    tinyint(8) not null, 
+    proveedor_id    int not null, 
     proveedor       varchar(100) not null,
     credit_rating   tinyint(1) not null,
     ship_method     varchar(100) not null,
@@ -112,7 +112,7 @@ create table if not exists fact_ventas(
     store_key        int(8)     not null,
     product_key      int(8)     not null,
     proveedor_key    int(8)     not null,
-    territory_key    int(8)    not null,
+    territory_key    int(8)     not null,
     cliente_key      int(8)     not null,
 
     -- datos
@@ -146,6 +146,3 @@ create table if not exists fact_ventas(
     index cliente_key (cliente_key),
     foreign key (cliente_key) references dim_cliente(cliente_key)
 );
-
-
-
